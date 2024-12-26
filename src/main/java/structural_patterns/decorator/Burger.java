@@ -6,19 +6,11 @@
 
 package structural_patterns.decorator;
 
-public interface Meal {
+public class Burger
+        extends MealDecorator {
 
-    double getPrice();
-
-    String getItems();
-
-    default int getAmountOfMeal(Class<?> mealClass) {
-        if (mealClass.isInstance(this)) {
-            return 1;
-        }
-        else {
-            return 0;
-        }
+    public Burger(Meal meal) {
+        super(meal, "Burger", 3.0d);
     }
 
 }

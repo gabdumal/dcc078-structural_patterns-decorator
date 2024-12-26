@@ -29,4 +29,13 @@ public abstract class MealDecorator
         return this.name + "\n" + this.meal.getItems();
     }
 
+    @Override
+    public int getAmountOfMeal(Class<?> mealClass) {
+        int amountOfSuchMeal = 0;
+        if (mealClass.isInstance(this)) {
+            amountOfSuchMeal += 1;
+        }
+        return amountOfSuchMeal + this.meal.getAmountOfMeal(mealClass);
+    }
+
 }

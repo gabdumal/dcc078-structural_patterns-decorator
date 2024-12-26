@@ -6,19 +6,17 @@
 
 package structural_patterns.decorator;
 
-public interface Meal {
+public class Breads
+        implements Meal {
 
-    double getPrice();
+    @Override
+    public double getPrice() {
+        return 1.0d;
+    }
 
-    String getItems();
-
-    default int getAmountOfMeal(Class<?> mealClass) {
-        if (mealClass.isInstance(this)) {
-            return 1;
-        }
-        else {
-            return 0;
-        }
+    @Override
+    public String getItems() {
+        return "Breads";
     }
 
 }
