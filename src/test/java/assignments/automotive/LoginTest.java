@@ -42,6 +42,7 @@ public class LoginTest {
             login.begin();
             login.run();
             var user = login.getUser();
+            fail();
         }
         catch (ServiceError exception) {
             assertEquals("The service has not finished", exception.getMessage());
@@ -57,6 +58,7 @@ public class LoginTest {
             login.informUsernameAndPassword("ana", "abacaxi");
             login.run();
             var user = login.getUser();
+            fail();
         }
         catch (ServiceError exception) {
             assertEquals("The service has not finished", exception.getMessage());

@@ -6,11 +6,13 @@
 
 package structural_patterns.decorator;
 
+import java.util.HashMap;
+
 public interface Meal {
 
     double getPrice();
 
-    String getItems();
+    HashMap<Class<?>, Integer> getItems();
 
     default int getAmountOfMeal(Class<?> mealClass) {
         if (mealClass.isInstance(this)) {

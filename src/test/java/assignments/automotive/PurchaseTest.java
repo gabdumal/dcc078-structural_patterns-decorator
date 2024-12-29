@@ -14,8 +14,7 @@ import assignments.automotive.vehicle.Engine.EngineType;
 import assignments.automotive.vehicle.Model.ModelType;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class PurchaseTest {
 
@@ -60,6 +59,7 @@ public class PurchaseTest {
             purchase.informIfPickupHasCover(true);
             purchase.run();
             var finalCost = purchase.calculateFinalCost();
+            fail();
         }
         catch (RuntimeException exception) {
             assertEquals("The Model is not a Pickup", exception.getMessage());
@@ -74,6 +74,7 @@ public class PurchaseTest {
             purchase.begin();
             purchase.run();
             var finalCost = purchase.calculateFinalCost();
+            fail();
         }
         catch (ServiceError exception) {
             assertEquals("The service has not finished", exception.getMessage());
@@ -89,6 +90,7 @@ public class PurchaseTest {
             purchase.informModelAndEngine(ModelType.HATCHBACK, null);
             purchase.run();
             var finalCost = purchase.calculateFinalCost();
+            fail();
         }
         catch (RuntimeException exception) {
             assertEquals("This engine does not exist", exception.getMessage());
@@ -104,6 +106,7 @@ public class PurchaseTest {
             purchase.informModelAndEngine(null, EngineType.DIESEL);
             purchase.run();
             var finalCost = purchase.calculateFinalCost();
+            fail();
         }
         catch (RuntimeException exception) {
             assertEquals("This model does not exist", exception.getMessage());

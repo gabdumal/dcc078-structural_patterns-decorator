@@ -6,6 +6,8 @@
 
 package structural_patterns.decorator;
 
+import java.util.HashMap;
+
 public abstract class MealDecorator
         implements Meal {
 
@@ -25,8 +27,11 @@ public abstract class MealDecorator
     }
 
     @Override
-    public String getItems() {
-        return this.name + "\n" + this.meal.getItems();
+    public HashMap<Class<?>, Integer> getItems() {
+        var items = this.meal.getItems();
+        var mealAmount = items.getOrDefault(this.getClass(), 0);
+        items.put(this.getClass(), mealAmount + 1);
+        return items;
     }
 
     @Override

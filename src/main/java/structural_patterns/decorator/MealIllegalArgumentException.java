@@ -6,21 +6,11 @@
 
 package structural_patterns.decorator;
 
-import java.util.HashMap;
+public class MealIllegalArgumentException
+        extends IllegalArgumentException {
 
-public class Breads
-        implements Meal {
-
-    @Override
-    public double getPrice() {
-        return 1.0d;
-    }
-
-    @Override
-    public HashMap<Class<?>, Integer> getItems() {
-        var items = new HashMap<Class<?>, Integer>();
-        items.put(Breads.class, 1);
-        return items;
+    public MealIllegalArgumentException(String message) {
+        super(message);
     }
 
 }
