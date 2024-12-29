@@ -6,14 +6,14 @@
 
 package structural_patterns.decorator;
 
-public class Lettuce
+public class Cheese
         extends MealDecorator {
 
-    public Lettuce(Meal meal) {
-        super(meal, "Lettuce", 0.5d);
-        var lettuceLeavesAmount = this.getAmountOfMeal(Lettuce.class);
-        if (lettuceLeavesAmount > 5) {
-            throw new MealIllegalArgumentException("There must be at most 5 lettuce leaves");
+    public Cheese(Meal meal) {
+        super(meal, "Cheese", 1.5d);
+        var cheeseSlicesAmount = this.getAmountOfMeal(Cheese.class);
+        if (cheeseSlicesAmount > 4) {
+            throw new MealIllegalArgumentException("There must be at most 4 cheese slices");
         }
     }
 
