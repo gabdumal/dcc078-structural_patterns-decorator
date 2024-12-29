@@ -22,8 +22,8 @@ public class BurgerTest {
         var breadAmount = meal.getAmountOfMeal(Breads.class);
         assertEquals(1, breadAmount);
 
-        var burgerAmount = meal.getAmountOfMeal(Burger.class);
-        assertEquals(1, burgerAmount);
+        var burgersAmount = meal.getAmountOfMeal(Burger.class);
+        assertEquals(1, burgersAmount);
 
         var price = meal.getPrice();
         assertEquals(4.0d, price, 0.0001d);
@@ -42,8 +42,8 @@ public class BurgerTest {
         var breadAmount = meal.getAmountOfMeal(Breads.class);
         assertEquals(1, breadAmount);
 
-        var burgerAmount = meal.getAmountOfMeal(Burger.class);
-        assertEquals(2, burgerAmount);
+        var burgersAmount = meal.getAmountOfMeal(Burger.class);
+        assertEquals(2, burgersAmount);
 
         var price = meal.getPrice();
         assertEquals(7.0d, price, 0.0001d);
@@ -62,8 +62,8 @@ public class BurgerTest {
         var breadAmount = meal.getAmountOfMeal(Breads.class);
         assertEquals(1, breadAmount);
 
-        var burgerAmount = meal.getAmountOfMeal(Burger.class);
-        assertEquals(3, burgerAmount);
+        var burgersAmount = meal.getAmountOfMeal(Burger.class);
+        assertEquals(3, burgersAmount);
 
         var price = meal.getPrice();
         assertEquals(10.0d, price, 0.0001d);
@@ -83,8 +83,8 @@ public class BurgerTest {
             var breadAmount = meal.getAmountOfMeal(Breads.class);
             assertEquals(1, breadAmount);
 
-            var burgerAmount = meal.getAmountOfMeal(Burger.class);
-            assertEquals(3, burgerAmount);
+            var burgersAmount = meal.getAmountOfMeal(Burger.class);
+            assertEquals(3, burgersAmount);
 
             var price = meal.getPrice();
             assertEquals(10.0d, price, 0.0001d);

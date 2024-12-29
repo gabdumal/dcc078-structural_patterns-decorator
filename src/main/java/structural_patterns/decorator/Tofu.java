@@ -6,19 +6,19 @@
 
 package structural_patterns.decorator;
 
-public class Burger
+public class Tofu
         extends MealDecorator {
 
-    public Burger(Meal meal) {
-        super(meal, "Burger", 3.0d);
-        var tofuBlocksAmount = this.getAmountOfMeal(Tofu.class);
-        if (tofuBlocksAmount > 0) {
+    public Tofu(Meal meal) {
+        super(meal, "Tofu", 2.0d);
+        var burgersAmount = this.getAmountOfMeal(Burger.class);
+        if (burgersAmount > 0) {
             throw new MealIllegalArgumentException("A single meal cannot have both tofu blocks and burgers");
         }
 
-        var burgersAmount = this.getAmountOfMeal(Burger.class);
-        if (burgersAmount > 3) {
-            throw new MealIllegalArgumentException("There must be at most 3 burgers");
+        var tofuBlocksAmount = this.getAmountOfMeal(Tofu.class);
+        if (tofuBlocksAmount > 3) {
+            throw new MealIllegalArgumentException("There must be at most 3 tofu blocks");
         }
     }
 

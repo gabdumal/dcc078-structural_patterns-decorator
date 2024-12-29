@@ -90,8 +90,8 @@ public class LettuceTest {
         var breadAmount = meal.getAmountOfMeal(Breads.class);
         assertEquals(1, breadAmount);
 
-        var burgerAmount = meal.getAmountOfMeal(Burger.class);
-        assertEquals(1, burgerAmount);
+        var burgersAmount = meal.getAmountOfMeal(Burger.class);
+        assertEquals(1, burgersAmount);
 
         var lettuceLeavesAmount = meal.getAmountOfMeal(Lettuce.class);
         assertEquals(2, lettuceLeavesAmount);
