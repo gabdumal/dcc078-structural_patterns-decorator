@@ -1,0 +1,67 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+skinparam linetype ortho
+
+package structural_patterns{
+
+    package decorator {
+
+        interface Meal {
+            double getPrice()
+            HashMap<Class<?>, Integer> getItems()
+            default int getAmountOfMeal(Class<?> mealClass)
+        }
+
+        abstract class MealDecorator {
+            ' implements Meal
+            - final String name
+            - final double price
+            - final Meal meal
+            + MealDecorator(Meal meal, String name, double price)
+            + double getPrice()
+            + HashMap<Class<?>, Integer> getItems()
+            + int getAmountOfMeal(Class<?> mealClass)
+        }
+        MealDecorator o--> Meal
+        MealDecorator ..|> Meal
+
+        class MealIllegalArgumentException
+        MealIllegalArgumentException --|> IllegalArgumentException
+
+        class Breads{
+            ' implements Meal
+            + double getPrice()
+            + HashMap<Class<?>, Integer> getItems()
+        }
+        Breads ..|> Meal
+
+        class Burger {
+            ' extends MealDecorator
+            + Burger(Meal meal)
+        }
+        Burger ---|> MealDecorator
+
+        class Cheese {
+            ' extends MealDecorator
+            + Cheese(Meal meal)
+        }
+        Cheese ---|> MealDecorator
+
+        class Lettuce {
+            ' extends MealDecorator
+            + Lettuce(Meal meal)
+        }
+        Lettuce ---|> MealDecorator
+
+        class Tofu {
+            ' extends MealDecorator
+            + Tofu(Meal meal)
+        }
+        Tofu ---|> MealDecorator
+
+    }
+
+}
+
+@enduml
