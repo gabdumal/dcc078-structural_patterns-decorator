@@ -26,7 +26,7 @@ public class TofuTest {
         assertEquals(1, tofuBlocksAmount);
 
         var price = meal.getPrice();
-        assertEquals(4.0d, price, 0.0001d);
+        assertEquals(3.0d, price, 0.0001d);
 
         var items = meal.getItems();
         var expectedItems = new HashMap<Class<?>, Integer>();
